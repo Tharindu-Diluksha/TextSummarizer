@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextSummarizer", "TextSummarizer\TextSummarizer.csproj", "{0227B06F-9BAE-4893-B386-AC7620C9B53B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0227B06F-9BAE-4893-B386-AC7620C9B53B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0227B06F-9BAE-4893-B386-AC7620C9B53B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0227B06F-9BAE-4893-B386-AC7620C9B53B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0227B06F-9BAE-4893-B386-AC7620C9B53B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B211A29-A6B9-4B9A-9697-919243D95243}
+	EndGlobalSection
+EndGlobal

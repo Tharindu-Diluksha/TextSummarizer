@@ -1,0 +1,12 @@
+﻿@page "/text-summarizer"
+@rendermode InteractiveServer
+
+<PageTitle>Text Summarizer</PageTitle>
+
+<h1>Summarize</h1>
+
+<textarea @bind="_textAreaContent" id="textArea"></textarea>
+
+<button class="btn btn-primary" @onclick="SummarizeContentAsync">Summarize</button>
+
+
