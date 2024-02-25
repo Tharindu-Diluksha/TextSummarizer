@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components;
+using System.Text;
 
 namespace TextSummarizer.Components.Pages
 {
@@ -16,6 +17,7 @@ namespace TextSummarizer.Components.Pages
                 They can use it to build intelligent solutions based on the relevant information extracted to support various use cases. 
                 Extractive summarization supports several languages. It is based on pretrained multilingual transformer models, part of our quest for holistic representations. 
                 It draws its strength from transfer learning across monolingual and harness the shared nature of languages to produce models of improved quality and efficiency.";
+        private string _summarizeText = string.Empty;
 
         public TextSummarizerComponent()
         {
@@ -83,6 +85,7 @@ namespace TextSummarizer.Components.Pages
 
             Console.WriteLine();
             // View operation results.
+            StringBuilder stringBuilder = new StringBuilder();
             await foreach (AnalyzeActionsResult documentsInPage in operation.Value)
             {
                 IReadOnlyCollection<ExtractiveSummarizeActionResult> summaryResults = documentsInPage.ExtractiveSummarizeResults;
@@ -94,6 +97,7 @@ namespace TextSummarizer.Components.Pages
                         Console.WriteLine($"  Error!");
                         Console.WriteLine($"  Action error code: {summaryActionResults.Error.ErrorCode}.");
                         Console.WriteLine($"  Message: {summaryActionResults.Error.Message}");
+                        stringBuilder.Append($"Error! Action error code: {summaryActionResults.Error.ErrorCode}, Message: {summaryActionResults.Error.Message}");
                         continue;
                     }
 
@@ -104,6 +108,7 @@ namespace TextSummarizer.Components.Pages
                             Console.WriteLine($"  Error!");
                             Console.WriteLine($"  Document error code: {documentResults.Error.ErrorCode}.");
                             Console.WriteLine($"  Message: {documentResults.Error.Message}");
+                            stringBuilder.Append($"Error! Document error code: {documentResults.Error.ErrorCode}, Message: {documentResults.Error.Message}");
                             continue;
                         }
 
@@ -114,11 +119,12 @@ namespace TextSummarizer.Components.Pages
                         {
                             Console.WriteLine($"  Sentence: {sentence.Text}");
                             Console.WriteLine();
+                            stringBuilder.Append(sentence.Text);
                         }
                     }
                 }
             }
-
+            _summarizeText = $@"{stringBuilder}";
         }
 
 

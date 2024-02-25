@@ -3,10 +3,21 @@
 
 <PageTitle>Text Summarizer</PageTitle>
 
-<h1>Summarize</h1>
+<h1>Summarize the text</h1>
 
-<textarea @bind="_textAreaContent" id="textArea"></textarea>
+<div>
+    <div>
+        <textarea @bind="_textAreaContent" id="textArea" style="width: 600px; height:200px"></textarea>
+    </div>
+    <div>
+        <button class="btn btn-primary" @onclick="SummarizeContentAsync">Summarize</button>
+    </div>
+</div>
 
-<button class="btn btn-primary" @onclick="SummarizeContentAsync">Summarize</button>
 
-
+<div style="margin-top:30px;">
+    <h4>Summary of the text</h4>
+    <span>
+        @_summarizeText
+    </span>
+</div>
